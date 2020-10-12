@@ -1,0 +1,15 @@
+version: '3'
+services:
+  redis-json:
+    container_name: redislabs-rejson
+    network_mode: bridge
+    image: redislabs/rejson:1.0.6
+    volumes:
+        - /home/jchereau/docker/redis-json/data:/data
+    ports:
+      - "6379:6379"
+    command: ["redis-server", "--loadmodule '/usr/lib/redis/modules/rejson.so' --appendonly yes"]
+    restart: always
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4

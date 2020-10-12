@@ -1,0 +1,6 @@
+# APACHE NO PARTE, hay que entrar al contenedor y hacerlo andar
+
+docker exec -it scriptcase bash
+
+/etc/init.d/apache2 start
+

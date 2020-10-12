@@ -1,0 +1,24 @@
+
+version: '3.3'
+
+services:
+  wordpress:
+    container_name: wordpress
+    image: wordpress:latest
+    ports:
+      - 80:80
+    networks:
+     - maridb_jerconet
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: mariadb:3306
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: kfsdppf50uopcx
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - /home/jchereau/docker/wordpress/html:/var/www/html
+
+networks:
+  maridb_jerconet:
+    external:
+     name: maridb_jerconet

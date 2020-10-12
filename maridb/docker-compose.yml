@@ -1,0 +1,22 @@
+version: '3'
+services:
+  mariadb:
+    container_name: mariadb
+    #network_mode: bridge
+    image: mariadb:10.3
+    volumes:
+        - /home/jchereau/docker/maridb/mysql:/var/lib/mysql
+    networks:
+      - jerconet
+    ports:
+      - "3306:3306"
+    command: ["mysqld", "--default-authentication-plugin=mysql_native_password"]
+    environment:
+      - MYSQL_ROOT_PASSWORD=kfsdppf50uopcx
+    restart: always
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+
+networks:
+  jerconet:

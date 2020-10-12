@@ -1,0 +1,20 @@
+version: '2'
+services:
+ app:
+    privileged: true
+    container_name: scriptcase
+    network_mode: bridge
+    hostname: scriptcase
+    mem_limit: "2G"
+    memswap_limit: "2G"
+    cpuset: "1"
+    image: javiercalles/scriptcase9-php7
+    ports:
+      - "80:80"
+    restart: always
+    tty: true
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+    volumes:
+      - /home/jchereau/docker/scriptcase/app:/var/www/html/scriptcase

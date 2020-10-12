@@ -1,0 +1,13 @@
+alpine-apache2-php5/htdocs
+mariadb/mysql
+maridb/mysql_backup
+maridb/mysql_old_fallo_mysql.db
+maridb/mysql
+maridb/prueba
+mssql/mssql
+redis-json/data
+scriptcase/app
+scriptcase/app_backup
+scriptcase/html
+scriptcase/app.tar.gz
+wordpress/html

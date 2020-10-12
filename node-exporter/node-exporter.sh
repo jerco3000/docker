@@ -1,0 +1,2 @@
+#sudo docker run -d -p 9100:9100 --name node-exporter -v "/proc:/host/proc" -v "/sys:/host/sys" -v "/:/rootfs" --net="host" prom/node-exporter --collector.procfs /host/proc -collector.sysfs /host/proc -collector.filesystem.ignored-mount-points "^/(sys|proc|dev|host|etc)($|/)"
+sudo docker run -d -p 9100:9100 --name node-exporter -v "/proc:/host/proc" -v "/sys:/host/sys" -v "/:/rootfs"  prom/node-exporter
